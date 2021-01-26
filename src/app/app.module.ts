@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
+import { SubcontentComponent } from './subcontent/subcontent.component';
 
 const approutes : Routes= [
   {
@@ -42,7 +43,8 @@ const approutes : Routes= [
     ContentbodyComponent,
     FooterComponent,
     DashboardComponent,
-    RegisterComponent
+    RegisterComponent,
+    SubcontentComponent
   ],
   imports: [
     BrowserModule,
