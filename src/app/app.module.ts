@@ -17,10 +17,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { SubcontentComponent } from './subcontent/subcontent.component';
 
+
 const approutes : Routes= [
   {
      path : '' , 
-     component : LoginComponent
+     component : SubcontentComponent
   },
   {
        path : 'dashboard',
@@ -45,6 +46,7 @@ const approutes : Routes= [
     DashboardComponent,
     RegisterComponent,
     SubcontentComponent
+   
   ],
   imports: [
     BrowserModule,

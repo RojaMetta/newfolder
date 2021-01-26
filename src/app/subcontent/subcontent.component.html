@@ -1,244 +1,157 @@
+<app-header></app-header>
 <section id="contentbody">
   <div class="row">
-    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
-      <div class="row">
-        <div class="left_bar">
-          <div class="single_leftbar">
-            <h2><span>Recent Post</span></h2>
-            <div class="singleleft_inner">
-              <ul class="recentpost_nav wow fadeInDown" *ngFor="let news of newList | slice:0:3; let i=index">
-                <li><a href="{{news.url}}"><img src="{{news.urlToImage}}" alt=""></a> <a class="recent_title" href="{{news.url}}"> {{news.title}}</a></li>
-                
-              </ul>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
-      <div class="row">
-        <div class="middle_bar">
-          <div class="featured_sliderarea">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
-              </ol>
-              <div class="carousel-inner" role="listbox">
-                <div class="item active"> <img [src]="sliderurl" alt="">
-                  <div class="carousel-caption">
-                    <h1><a href="#">{{slidertitle}}</a></h1>
-                  </div>
-                </div>
-                <div class="item" *ngFor="let news of bbcNews | slice:0:4; let i=index"> <img src="{{news.urlToImage}}" alt="">
-                  <div class="carousel-caption">
-                    <h1><a href="#"> {{news.title}}</a></h1>
-                  </div>
-                </div>
-                
-              </div>
-              <a class="left left_slide" href="#myCarousel" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a> <a class="right right_slide" href="#myCarousel" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> </a></div>
-          </div>
-          <div class="single_category wow fadeInDown">
-            <div class="category_title"> <a href="https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=460f485949674cc3b853143ac6a7721e">Top Headlines from BBC News</a></div>
-            <div class="single_category_inner">
-              <ul class="catg_nav">
-                <li *ngFor="let news of bbcList ">
-                  <div class="catgimg_container"> <a class="catg1_img" href="{{news.url}}"> <img src="{{news.urlToImage}}" alt=""> </a></div>
-                  <a class="catg_title" href="{{news.url}}"> {{news.title}}</a>
-                  <div class="sing_commentbox">
-                    <p><i class="fa fa-calendar"></i>{{news.publishedAt}}</p>
-                  </div>
-               </li>
-               
-              </ul>
-            </div>
-          </div>
-          <div class="single_category  wow fadeInDown">
-            <div class="category_title"> <a href="assets/pages/category-archive.html">Bussiness News</a></div>
-            <div class="single_category_inner">
-              <ul class="catg_nav catg_nav2">
-                <li *ngFor="let news of businessList">
-                  <div class="catgimg_container"> <a class="catg1_img" href="#"> <img src="{{news.urlToImage}}" alt=""> </a></div>
-                  <a class="catg_title" href="#"> {{news.title}}e</a>
-                  <div class="sing_commentbox">
-                    <p><i class="fa fa-calendar"></i>{{news.publishedAt}}</p>
-                    </div>
-                  <p class="post-summary">{{news.description}}</p>
-               </li>
+      <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+          <div class="row">
+              <div class="left_bar">
+                  <div class="single_leftbar">
+                      <h2><span>Recent Post</span></h2>
+                      <div class="singleleft_inner">
+                          <ul class="recentpost_nav wow fadeInDown"
+                              *ngFor="let news of newList | slice:0:3; let i=index">
+                              <li><a href="{{news.url}}"><img src="{{news.urlToImage}}" alt=""></a> <a
+                                      class="recent_title" href="{{news.url}}"> {{news.title}}</a></li>
 
-              </ul>
-            </div>
-          </div>
-          <!-- <div class="category_three_fourarea  wow fadeInDown">
-            <div class="category_three">
-              <div class="single_category">
-                <div class="category_title"> <a href="assets/pages/single_page.html">Entertainment News</a></div>
-                <div class="single_category_inner">
-                  <ul class="catg_nav catg_nav3">
-                    <li *ngFor="let news of entertainmentList">
-                      <div class="catgimg_container"> <a class="catg1_img" href="{{news.url}}"> <img src="{{news.urlToImage}}" alt=""> </a></div>
-                      <a class="catg_title" href="#"> {{news.title}}</a>
-                      <div class="sing_commentbox">
-                        <p><i class="fa fa-calendar"></i>{{news.publishedAt}}</p>
+                          </ul>
                       </div>
-                      <p class="post-summary">{{news.description}}</p>
-                   </li>
-                  </ul>
-                  <div class="catg3_bottompost wow fadeInDown">
-                    <ul class="catg3_snav">
-                      <li *ngFor="let news of entertainmentNews | slice:1:6; let i=index ">
-                        <div class="media"> <a class="media-left" href="#"> <img src="{{news.urlToImage}}" alt=""> </a>
-                          <div class="media-body"> <a class="catg_title" href="assets/pages/single_page.html">{{news.title}}</a>
-                            <div class="sing_commentbox">
-                              <p><i class="fa fa-calendar"></i>{{news.publishedAt}}</p>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
+          <div class="row">
+              <div class="middle_bar">
+                  
+                  
+                  <div class="category_three_fourarea  wow fadeInDown">
+                      <div class="category_three">
+                          <div class="single_category">
+                              <div class="category_title"> <a href="assets/pages/single_page.html">Entertainment
+                                      News</a></div>
+                              <div class="single_category_inner">
+                                  <div class="catg3_bottompost wow fadeInDown">
+                                      <ul class="catg3_snav">
+                                          <li *ngFor="let news of entertainmentNews">
+                                              <div class="media"> <a class="media-left" href="#"> <img
+                                                          src="{{news.urlToImage}}" alt=""> </a>
+                                                  <div class="media-body"> <a class="catg_title"
+                                                          href="assets/pages/single_page.html">{{news.title}}</a>
+                                                          <button type="button" class="btn btn-info">Add</button>
+                                                      <div class="sing_commentbox">
+                                                          <p><i class="fa fa-calendar"></i>{{news.publishedAt}}</p>
+
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </li>
+                                      </ul>
+                                  </div>
                               </div>
                           </div>
-                        </div>
-                     </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-          </div>
-            <div class="category_four wow fadeInDown">
-              <div class="single_category">
-                <div class="category_title"> <a href="#">General News</a></div>
-                <div class="single_category_inner">
-                  <ul class="catg_nav catg_nav3">
-                    <li *ngFor = "let news of generalList">
-                      <div class="catgimg_container"> <a class="catg1_img" href="assets/pages/single_page.html"> <img src="{{news.urlToImage}}" alt=""> </a></div>
-                      <a class="catg_title" href="assets/pages/single_page.html"> {{news.title}}</a>
-                      <div class="sing_commentbox">
-                        <p><i class="fa fa-calendar"></i>{{news.publishedAt}}</p>
-                        
-                      <p class="post-summary">{{news.description}}</p>
                       </div>
-                   </li>
-                  </ul>
-                  <div class="catg3_bottompost wow fadeInDown">
-                    <ul class="catg3_snav">
-                      <li *ngFor="let news of generalNews | slice:1:6; let i=index">
-                        <div class="media"> <a class="media-left" href="assets/pages/single_page.html"> <img src="{{news.urlToImage}}" alt=""> </a>
-                          <div class="media-body"> <a class="catg_title" href="#"> {{news.title}}</a>
-                            <div class="sing_commentbox">
-                              <p><i class="fa fa-calendar"></i>{{news.publishedAt}}</p>
-                              
-                          </div>
-                        </div>
-                        </div>
-                     </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="single_category wow fadeInDown">
-            <div class="category_title"> <a href="#">Health News</a></div>
-            <div class="single_category_inner">
-              <ul class="catg3_snav catg5_nav">
-                <li *ngFor="let news of healthNews | slice:0:6; let i=index">
-                  <div class="media"> <a href="#" class="media-left"> <img alt="" src="{{news.urlToImage}}"> </a>
-                    <div class="media-body"> <a href="#" class="catg_title"> {{news.title}}</a>
-                      <div class="sing_commentbox">
-                        <p><i class="fa fa-calendar"></i>{{news.publishedAt}}</p>
-                    </div>
-                  </div>
-                  </div>
-               </li>
-              </ul>
-            </div>
-          </div> 
-        </div>-->
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-      <div class="row">
-        <div class="right_bar">
-          <div class="single_leftbar wow fadeInDown">
-            <h2><span>Top Headlines From India</span></h2>
-            <div class="singleleft_inner">
-              <ul class="catg3_snav ppost_nav wow fadeInDown">
-                <li *ngFor="let news of topheadlinesUs | slice:0:10; let i=index ">
-                  <div class="media"> <a href="assets/pages/single_page.html" class="media-left"> <img alt="" src="{{news.urlToImage}}"> </a>
-                    <div class="media-body"> <a href="assets/pages/single_page.html" class="catg_title"> {{news.title}}</a></div>
-                  </div>
-               </li>
-                
-              </ul>
-            </div>
-          </div>
-          
-          <div class="single_leftbar wow fadeInDown">
-            <ul class="nav nav-tabs custom-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Most Popular</a></li>
-              <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Most Reader</a></li>
-              <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Recent Comment</a></li>
-            </ul>
-            <div class="tab-content">
-              <div role="tabpanel" class="tab-pane fade in active" id="home">
-                <ul class="catg3_snav ppost_nav wow fadeInDown">
-                  <li *ngFor="let news of popularList">
-                    <div class="media"> <a class="media-left" href="#"> <img src="{{news.urlToImage}}" alt=""> </a>
-                      <div class="media-body"> <a class="catg_title" href="#"> {{news.title}}</a></div>
-                    </div>
-                 </li>
-                </ul>
-              </div>
-              <div role="tabpanel" class="tab-pane fade" id="profile">
-                <ul class="catg3_snav ppost_nav wow fadeInDown">
-                  <li *ngFor="let news of mostrecentList">
-                    <div class="media"> <a class="media-left" href="#"> <img src="{{news.urlToImage}}" alt=""> </a>
-                      <div class="media-body"> <a class="catg_title" href="#"> {{news.title}}</a></div>
-                    </div>
-                 </li>
-                  
-                </ul>
-              </div>
-              <div role="tabpanel" class="tab-pane fade" id="messages">
-                <ul class="catg3_snav ppost_nav wow fadeInDown">
-                  <li *ngFor="let news of healthList">
-                    <div class="media"> <a class="media-left" href="#"> <img src="{{news.urlToImage}}" alt=""> </a>
-                      <div class="media-body"> <a class="catg_title" href="#"> {{news.title}}</a></div>
-                    </div>
-                 </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <div class="single_leftbar wow fadeInDown">
-            <h2><span>Labels</span></h2>
-            <div class="singleleft_inner">
-              <ul class="label_nav">
-                <li><a href="#">Arts</a></li>
-                <li><a href="#">Cinema</a></li>
-                <li><a href="#">Comedy</a></li>
-                <li><a href="#">Sports</a></li>
-                <li><a href="#">Tourism</a></li>
-                <li><a href="#">Videos</a></li>
-                <li><a href="#">Nature</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="single_leftbar wow fadeInDown">
-            <h2><span>Links</span></h2>
-            <div class="singleleft_inner">
-              <ul class="link_nav">
-                <li><a href="#">Blog Home</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Error Page</a></li>
-                <li><a href="#">Wpfreeware</a></li>
-                <li><a href="#">Facebook Account</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
+                  </div>
+
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+          <div class="row">
+              <div class="right_bar">
+                  <div class="single_leftbar wow fadeInDown">
+                      <h2><span>Top Headlines From India</span></h2>
+                      <div class="singleleft_inner">
+                          <ul class="catg3_snav ppost_nav wow fadeInDown">
+                              <li *ngFor="let news of topheadlinesUs | slice:0:10; let i=index ">
+                                  <div class="media"> <a href="assets/pages/single_page.html" class="media-left"> <img
+                                              alt="" src="{{news.urlToImage}}"> </a>
+                                      <div class="media-body"> <a href="assets/pages/single_page.html"
+                                              class="catg_title"> {{news.title}}</a></div>
+                                              
+                                  </div>
+                              </li>
+
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="single_leftbar wow fadeInDown">
+                      <ul class="nav nav-tabs custom-tabs" role="tablist">
+                          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                                  data-toggle="tab">Most Popular</a></li>
+                          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
+                                  data-toggle="tab">Most Reader</a></li>
+                          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab"
+                                  data-toggle="tab">Recent Comment</a></li>
+                      </ul>
+                      <div class="tab-content">
+                          <div role="tabpanel" class="tab-pane fade in active" id="home">
+                              <ul class="catg3_snav ppost_nav wow fadeInDown">
+                                  <li *ngFor="let news of popularList">
+                                      <div class="media"> <a class="media-left" href="#"> <img
+                                                  src="{{news.urlToImage}}" alt=""> </a>
+                                          <div class="media-body"> <a class="catg_title" href="#"> {{news.title}}</a>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div role="tabpanel" class="tab-pane fade" id="profile">
+                              <ul class="catg3_snav ppost_nav wow fadeInDown">
+                                  <li *ngFor="let news of mostrecentList">
+                                      <div class="media"> <a class="media-left" href="#"> <img
+                                                  src="{{news.urlToImage}}" alt=""> </a>
+                                          <div class="media-body"> <a class="catg_title" href="#"> {{news.title}}</a>
+                                          </div>
+                                      </div>
+                                  </li>
+
+                              </ul>
+                          </div>
+                          <div role="tabpanel" class="tab-pane fade" id="messages">
+                              <ul class="catg3_snav ppost_nav wow fadeInDown">
+                                  <li *ngFor="let news of healthList">
+                                      <div class="media"> <a class="media-left" href="#"> <img
+                                                  src="{{news.urlToImage}}" alt=""> </a>
+                                          <div class="media-body"> <a class="catg_title" href="#"> {{news.title}}</a>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="single_leftbar wow fadeInDown">
+                      <h2><span>Labels</span></h2>
+                      <div class="singleleft_inner">
+                          <ul class="label_nav">
+                              <li><a href="#">Arts</a></li>
+                              <li><a href="#">Cinema</a></li>
+                              <li><a href="#">Comedy</a></li>
+                              <li><a href="#">Sports</a></li>
+                              <li><a href="#">Tourism</a></li>
+                              <li><a href="#">Videos</a></li>
+                              <li><a href="#">Nature</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="single_leftbar wow fadeInDown">
+                      <h2><span>Links</span></h2>
+                      <div class="singleleft_inner">
+                          <ul class="link_nav">
+                              <li><a href="#">Blog Home</a></li>
+                              <li><a href="#">Blog</a></li>
+                              <li><a href="#">Error Page</a></li>
+                              <li><a href="#">Wpfreeware</a></li>
+                              <li><a href="#">Facebook Account</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </section>
+<app-footer></app-footer>
